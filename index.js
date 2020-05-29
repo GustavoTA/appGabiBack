@@ -22,7 +22,6 @@ app.use('/perguntas', perguntaRoute)
 
 //port
 const server = http.createServer(app)
-server.listen(3000)
-console.log('Rodando na porta ' + 3000)
+server.listen(process.env.PORT || 3000)
 
 module.exports = app
