@@ -39,4 +39,18 @@ _router.get('/nivel/:nivel',(res, req) => {
     })
 })
 
+_router.get('/id/:id',(res, req) => {
+    perguntaSchema.find({'_id':res.params.id},(err, data)=>{
+        if(err){
+            req.send({"message": "Ocorreu algum problema", err});
+        } else {
+            if(data.length != 0){
+                req.send(data)
+            }else{
+                req.send("Não existem pergunta com esse id");
+            }
+        }
+    })
+})
+
 module.exports = _router;
