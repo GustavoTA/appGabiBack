@@ -40,7 +40,7 @@ _router.get('/nivel/:nivel',(res, req) => {
 })
 
 _router.get('/id/:id',(res, req) => {
-    perguntaSchema.find({'_id':res.params.id},(err, data)=>{
+    perguntaSchema.findOne({'_id':res.params.id},(err, data)=>{
         if(err){
             req.send({"message": "Ocorreu algum problema", err});
         } else {
