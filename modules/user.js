@@ -1,7 +1,13 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const userScheme = new Schema({
+const resposta = new Schema({
+    idPergunta: {type: Number},
+    idResposta: {type: Number},
+
+})
+
+const UserSchema = new Schema({
     _id : { type: Number },
     nome : { type: String },
     apelido : { type: String },
@@ -9,10 +15,6 @@ const userScheme = new Schema({
     repostas : resposta
 })
 
-const resposta = new Schema({
-    idPergunta: {type: Number},
-    idResposta: {type: Number},
 
-})
 
 module.exports = mongoose.model('User', UserSchema);
